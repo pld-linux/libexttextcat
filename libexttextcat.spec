@@ -3,6 +3,7 @@
 %bcond_without	tests
 
 Summary:	Text categorization library
+Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
 Version:	3.2.0
 Release:	1
@@ -19,8 +20,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libexttextcat is an N-Gram-Based Text Categorization library primarily
 intended for language guessing.
 
+%description -l pl.UTF-8
+libexttextcat jest bazowaną na N-GRAM biblioteką kategoryzacji tekstu
+głównie przeznaczona do odgadywania języka.
+
 %package devel
 Summary:	Development files for %{name}
+Summary(pl.UTF-8):	Pliki nagłówkowe dla %{name}
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Provides:	libtextcat-devel = %{version}-%{release}
@@ -30,14 +36,23 @@ Obsoletes:	libtextcat-devel < 3.2.0-1
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
+%description devel -l pl.UTF-8
+Paczka %{name}-devel zawiera biblioteki i pliki nagłówkowe do
+tworzenia aplikacji opartych na %{name}.
+
 %package tools
 Summary:	Tool for creating custom document fingerprints
+Summary(pl.UTF-8):	Narzędzia do tworzenia niestandardowych odcisków dokumentów.
 Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
 
 %description tools
 The %{name}-tools package contains the createfp program that allows
 you to easily create your own document fingerprints.
+
+%description tools -l pl.UTF-8
+Paczka %{name}-tools zawiera program createfp który pozwla do łatwego
+tworzenia odcisków (fingerprints) dokumentów.
 
 %prep
 %setup -q
