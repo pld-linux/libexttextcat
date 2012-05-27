@@ -6,12 +6,12 @@
 Summary:	Text categorization library
 Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
-Version:	3.2.0
+Version:	3.3.0
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
-# Source0-md5:	941ec532832ffea01e121373a2733a96
+# Source0-md5:	262ff151698ddefc11b057ef8bb2b569
 URL:		http://www.freedesktop.org/wiki/Software/libexttextcat
 Provides:	libtextcat = %{version}-%{release}
 Obsoletes:	libtextcat < 3.2.0-1
@@ -53,6 +53,18 @@ Static libexttextcat library.
 %description static -l pl.UTF-8
 Statyczna biblioteka libexttextcat.
 
+%package -n vala-libexttextcat
+Summary:	libexttextcat API for Vala language
+Summary(pl.UTF-8):	API libexttextcat dla języka Vala
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description -n vala-libexttextcat
+libexttextcat API for Vala language.
+
+%description -n vala-libexttextcat -l pl.UTF-8
+API libexttextcat dla języka Vala.
+
 %package tools
 Summary:	Tool for creating custom document fingerprints
 Summary(pl.UTF-8):	Narzędzia do tworzenia własnych odcisków dokumentów
@@ -72,8 +84,9 @@ Ten pakiet zawiera program createfp pozwalający łatwo tworzyć odciski
 
 %build
 %configure \
+	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static} \
-	--disable-werror \
+	--disable-werror
 
 %{__make}
 %{?with_tests:%{__make} check}
@@ -96,21 +109,25 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README*
-%attr(755,root,root) %{_libdir}/libexttextcat.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libexttextcat.so.0
+%attr(755,root,root) %{_libdir}/libexttextcat-1.0.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libexttextcat-1.0.so.0
 %{_datadir}/%{name}
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libexttextcat.so
+%attr(755,root,root) %{_libdir}/libexttextcat-1.0.so
 %{_includedir}/%{name}
 %{_pkgconfigdir}/%{name}.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libexttextcat.a
+%{_libdir}/libexttextcat-1.0.a
 %endif
+
+%files -n vala-libexttextcat
+%defattr(644,root,root,755)
+%{_datadir}/vala/vapi/libexttextcat.vapi
 
 %files tools
 %defattr(644,root,root,755)
