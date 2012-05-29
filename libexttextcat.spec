@@ -7,11 +7,12 @@ Summary:	Text categorization library
 Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
 Version:	3.3.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
 # Source0-md5:	262ff151698ddefc11b057ef8bb2b569
+Patch0:		%{name}-pc.patch
 URL:		http://www.freedesktop.org/wiki/Software/libexttextcat
 Provides:	libtextcat = %{version}-%{release}
 Obsoletes:	libtextcat < 3.2.0-1
@@ -81,6 +82,7 @@ Ten pakiet zawiera program createfp pozwalający łatwo tworzyć odciski
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
