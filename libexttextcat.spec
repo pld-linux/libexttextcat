@@ -6,12 +6,12 @@
 Summary:	Text categorization library
 Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
-Version:	3.3.1
+Version:	3.4.0
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
-# Source0-md5:	96de83da47db47c15784d9c21770819f
+# Source0-md5:	8168a9c4a1e2b9ea34c562c7eb871523
 URL:		http://www.freedesktop.org/wiki/Software/libexttextcat
 Provides:	libtextcat = %{version}-%{release}
 Obsoletes:	libtextcat < 3.2.0-1
@@ -103,26 +103,26 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p/sbin/ldconfig
+%post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README*
-%attr(755,root,root) %{_libdir}/libexttextcat-1.0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libexttextcat-1.0.so.0
+%attr(755,root,root) %{_libdir}/libexttextcat-2.0.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libexttextcat-2.0.so.0
 %{_datadir}/%{name}
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libexttextcat-1.0.so
+%attr(755,root,root) %{_libdir}/libexttextcat-2.0.so
 %{_includedir}/%{name}
 %{_pkgconfigdir}/%{name}.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libexttextcat-1.0.a
+%{_libdir}/libexttextcat-2.0.a
 %endif
 
 %files -n vala-libexttextcat
