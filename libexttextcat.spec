@@ -6,12 +6,12 @@
 Summary:	Text categorization library
 Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
-Version:	3.4.3
+Version:	3.4.4
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
-# Source0-md5:	537ae200f46270722856c57b7beb2a03
+# Source0-md5:	bfa7107c27afda3a3afa4b7ab5a3fe17
 URL:		http://www.freedesktop.org/wiki/Software/libexttextcat
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
