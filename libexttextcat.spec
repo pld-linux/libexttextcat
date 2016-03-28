@@ -2,12 +2,12 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make check"
 %bcond_without	static_libs	# static libraries
-#
+
 Summary:	Text categorization library
 Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
 Version:	3.4.4
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries
 Source0:	http://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
@@ -60,6 +60,9 @@ Summary:	libexttextcat API for Vala language
 Summary(pl.UTF-8):	API libexttextcat dla języka Vala
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description -n vala-libexttextcat
 libexttextcat API for Vala language.
