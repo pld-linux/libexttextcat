@@ -10,9 +10,9 @@ Version:	3.4.5
 Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
+Source0:	https://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
 # Source0-md5:	69c984b1785b56942179eb0ddc9c758f
-URL:		http://www.freedesktop.org/wiki/Software/libexttextcat
+URL:		https://wiki.documentfoundation.org/Libexttextcat
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Provides:	libtextcat = %{version}-%{release}
