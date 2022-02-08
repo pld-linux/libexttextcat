@@ -6,13 +6,14 @@
 Summary:	Text categorization library
 Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
-Version:	3.4.5
+Version:	3.4.6
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	https://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
-# Source0-md5:	69c984b1785b56942179eb0ddc9c758f
+# Source0-md5:	484e91941f83d06cd08dcb7d578c7ca2
 URL:		https://wiki.documentfoundation.org/Libexttextcat
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Provides:	libtextcat = %{version}-%{release}
@@ -120,7 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libexttextcat-2.0.so
 %{_includedir}/%{name}
-%{_pkgconfigdir}/%{name}.pc
+%{_pkgconfigdir}/libexttextcat.pc
 
 %if %{with static_libs}
 %files static
