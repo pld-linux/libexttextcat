@@ -1,17 +1,17 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make check"
-%bcond_without	static_libs	# static libraries
+%bcond_without	tests		# unit tests
+%bcond_without	static_libs	# static library
 
 Summary:	Text categorization library
 Summary(pl.UTF-8):	Biblioteka kategoryzacji tekstu
 Name:		libexttextcat
-Version:	3.4.6
+Version:	3.4.7
 Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	https://dev-www.libreoffice.org/src/libexttextcat/%{name}-%{version}.tar.xz
-# Source0-md5:	484e91941f83d06cd08dcb7d578c7ca2
+Source0:	https://dev-www.libreoffice.org/src/%{name}-%{version}.tar.xz
+# Source0-md5:	1d0f8ff8c0123b4146d6cb1d8a9d1134
 URL:		https://wiki.documentfoundation.org/Libexttextcat
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	tar >= 1:1.22
