@@ -32,7 +32,7 @@ przeznaczona głównie do odgadywania języka.
 Summary:	Development files for %{name}
 Summary(pl.UTF-8):	Pliki nagłówkowe dla %{name}
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 Provides:	libtextcat-devel = %{version}-%{release}
 Obsoletes:	libtextcat-devel < 3.2.0-1
 
@@ -48,7 +48,7 @@ Ten pakiet zawiera pliki nagłówkowe do tworzenia aplikacji opartych na
 Summary:	Static libexttextcat library
 Summary(pl.UTF-8):	Statyczna biblioteka libexttextcat
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static libexttextcat library.
@@ -73,7 +73,7 @@ API libexttextcat dla języka Vala.
 Summary:	Tool for creating custom document fingerprints
 Summary(pl.UTF-8):	Narzędzia do tworzenia własnych odcisków dokumentów
 Group:		Applications/Publishing
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description tools
 This package contains the createfp program that allows you to easily
